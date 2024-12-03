@@ -13,20 +13,20 @@ public class Building : MonoBehaviour
         public Data(Building building)
         {
             _random = new Unity.Mathematics.Random(1);
-            _tenants = building._floors * _random.NextInt(20, 200);
+            _tenants = building._floors * _random.NextInt(50, 200);
             PowerUsage = 0;
         }
 
         public void UpdatePowerUsage()
         {
             PowerUsage = 0f;
-            for (int i = 0; i< _tenants; i++)
+
+            for (int i = 0; i < _tenants; i++)
             {
                 PowerUsage += _random.NextFloat(1f, 5f);
             }
         }
     }
 
-    [SerializeField]
-    private int _floors;
+    [SerializeField] private int _floors;
 }
