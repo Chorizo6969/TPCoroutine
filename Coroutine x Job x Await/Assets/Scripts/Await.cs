@@ -34,34 +34,4 @@ public class Await : MonoBehaviour
     {
         _stop = false;
     }
-
-    /*IEnumerator Rotate()
-    {
-        while (timer <= 85)
-        {
-            _cube.transform.rotation = Quaternion.Euler(420 * _cube.transform.rotation.x, 650 * _cube.transform.rotation.y, 520 * _cube.transform.rotation.z);
-            timer++;
-            yield return new WaitForSeconds(0.05f);
-        }
-    }*/
-
-    private async UniTask DoSomethingAsync(CancellationToken cancellationToken)
-    {
-        Debug.Log("QQQQQQQQQQQQQ");
-        await UniTask.Delay(1000, cancellationToken: cancellationToken);
-
-        // ---
-        if (cancellationToken.IsCancellationRequested)
-        {
-            // do some things
-        }
-
-        // OR
-
-        cancellationToken.ThrowIfCancellationRequested(); // breaks further execution of this method
-                                                          // ---
-
-        Debug.Log("WWWWW");
-
-    }
 }
